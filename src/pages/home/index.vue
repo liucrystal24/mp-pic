@@ -7,7 +7,7 @@
           :values="items.map((v) => v.title)"
           @clickItem="onClickItem"
           style-type="text"
-          active-color="#d4237a"
+          active-color="#d4237e"
         ></uni-segmented-control>
       </view>
       <view class="titlesearch">
