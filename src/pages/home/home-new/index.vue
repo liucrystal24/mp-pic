@@ -6,7 +6,11 @@ export default {
   data() {
     return {};
   },
-  onLoad() {},
+  mounted() {
+    uni.setNavigationBarTitle({
+      title: '最新'
+    });
+  },
   methods: {},
 };
 </script>

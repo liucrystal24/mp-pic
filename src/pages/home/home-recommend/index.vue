@@ -11,11 +11,7 @@
         <text class="title_content">推荐</text>
       </view>
       <view class="recommend_content">
-        <view
-          class="recommend_item"
-          v-for="item in recommendList"
-          :key="item.id"
-        >
+        <view class="recommend_item" v-for="item in recommendList" :key="item.id">
           <image :src="item.thumb" mode="widthFix" />
         </view>
       </view>
@@ -34,15 +30,8 @@
         <view class="months_title_more">更多 ></view>
       </view>
       <view class="months_content">
-        <view
-          class="months_item"
-          v-for="item in monthsList.items"
-          :key="item.id"
-        >
-          <image
-            :src="item.thumb + item.rule.replace('$<Height>', 360)"
-            mode="aspectFill"
-          />
+        <view class="months_item" v-for="item in monthsList.items" :key="item.id">
+          <image :src="item.thumb + item.rule.replace('$<Height>', 360)" mode="aspectFill" />
         </view>
       </view>
     </view>
@@ -74,13 +63,17 @@ export default {
       params: {
         limit: 30,
         order: "hot",
-        skip: 0,
+        skip: 0
       },
-      hasMore: true,
+      hasMore: true
     };
   },
   mounted() {
     this.getList();
+
+    uni.setNavigationBarTitle({
+      title: "推荐"
+    });
   },
   methods: {
     // 触底处理
@@ -90,21 +83,21 @@ export default {
         this.getList();
       } else {
         uni.showToast({
-          title: "没有数据了……",
+          title: "没有数据了……"
         });
       }
     },
     // 获取接口数据
     getList: function() {
       uni.showLoading({
-        title: "加载中",
+        title: "加载中"
       });
       uni
         .request({
           url: "http://157.122.54.189:9088/image/v3/homepage/vertical",
-          data: this.params,
+          data: this.params
         })
-        .then((data) => {
+        .then(data => {
           let [err, res] = data;
           uni.hideLoading();
           if (err === null) {
@@ -130,8 +123,8 @@ export default {
             console.log(err);
           }
         });
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

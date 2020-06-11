@@ -6,7 +6,11 @@ export default {
   data() {
     return {};
   },
-  onLoad() {},
+  mounted() {
+    uni.setNavigationBarTitle({
+      title: '分类'
+    });
+  },
   methods: {},
 };
 </script>
