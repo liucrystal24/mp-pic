@@ -69,6 +69,10 @@ export default {
             }
             if (res.data.res.album.length === 0) {
               this.hasMore = false;
+              uni.showToast({
+                title: "没有数据了",
+                icon: "none"
+              });
               return;
             }
             this.album = [...this.album, ...res.data.res.album];

@@ -1,13 +1,14 @@
 {
 	"pages": [{
-			"path": "pages/album/index",
-			"style": {
-				"navigationBarTitleText": "专辑详情"
-			}
-		}, {
 			"path": "pages/home/index",
 			"style": {
 				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/album/index",
+			"style": {
+				"navigationBarTitleText": "专辑详情"
 			}
 		},
 		{

@@ -83,7 +83,8 @@ export default {
         this.getList();
       } else {
         uni.showToast({
-          title: "没有数据了……"
+          title: "没有数据了……",
+          icon: "none"
         });
       }
     },
@@ -115,6 +116,10 @@ export default {
             // 没有新数据时，弹窗提示
             if (res.data.res.vertical.length === 0) {
               this.hasMore = false;
+              uni.showToast({
+                title: "没有数据了",
+                icon: "none"
+              });
               return;
             }
             // 热门

@@ -34,6 +34,7 @@ export default {
         // 1: 有 album,表示第一次请求; 0: 无 album
         first: 1
       },
+      hasMore: true,
       id: "",
       album: {},
       wallpaper: []
@@ -42,8 +43,22 @@ export default {
   onLoad(option) {
     const { id } = option;
     // this.id = id;
-    this.id = `5e5cf679e7bce739db1281e4`;
+    this.id = id;
     this.getList();
+  },
+  // 页面触底
+  onReachBottom() {
+    if (this.hasMore) {
+      this.params.skip += this.params.limit;
+      this.params.first = 0;
+      this.getList();
+    } else {
+      console.log(this.params.skip);
+      uni.showToast({
+        title: "没有数据了",
+        icon: "none"
+      });
+    }
   },
   methods: {
     getList: function() {
@@ -60,8 +75,27 @@ export default {
           uni.hideLoading();
           if (err === null) {
             console.log(res.data.res);
-            this.album = res.data.res.album;
-            this.wallpaper = res.data.res.wallpaper;
+
+            if (this.params.skip === 0) {
+              this.album = res.data.res.album;
+            }
+
+            if (res.data.res.wallpaper.length === 0) {
+              this.hasMore = false;
+              if (this.params.first === 1) {
+                uni.showToast({
+                  title: "没有专辑详情图...",
+                  icon: "none"
+                });
+                return;
+              }
+              uni.showToast({
+                title: "没有数据了",
+                icon: "none"
+              });
+              return;
+            }
+            this.wallpaper = [...this.wallpaper, ...res.data.res.wallpaper];
           } else {
             console.log(err);
           }
