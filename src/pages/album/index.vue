@@ -17,13 +17,16 @@
       </view>
     </view>
     <view class="wallpaper_wrap">
-      <view class="wrap_item" v-for="item in wallpaper" :key="item.id">
-        <image :src="item.thumb+item.rule.replace('$<Height>','360')" mode="aspectFill" />
+      <view class="wrap_item" v-for="(item,index) in wallpaper" :key="item.id">
+        <go-detail :list="wallpaper" :index="index">
+          <image :src="item.thumb+item.rule.replace('$<Height>','360')" class="wallpaper_img" />
+        </go-detail>
       </view>
     </view>
   </view>
 </template>
 <script>
+import goDetail from "@/components/goDetail";
 export default {
   data() {
     return {
@@ -43,7 +46,7 @@ export default {
   onLoad(option) {
     const { id } = option;
     // this.id = id;
-    this.id = id;
+    this.id = "5d5f8e45e7bce75ae7fb8278";
     this.getList();
   },
   // 页面触底
@@ -101,7 +104,8 @@ export default {
           }
         });
     }
-  }
+  },
+  components: { goDetail }
 };
 </script>
 <style lang='scss' scoped>
@@ -159,11 +163,10 @@ export default {
   flex-wrap: wrap;
   .wrap_item {
     width: 33.3vw;
-    height: 25vw;
+    // height: 25vw;
     border: 3rpx solid #fff;
     image {
-      width: 100%;
-      height: 100%;
+      height: 25vw;
     }
   }
 }
