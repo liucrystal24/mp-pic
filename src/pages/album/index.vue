@@ -45,8 +45,8 @@ export default {
   },
   onLoad(option) {
     const { id } = option;
-    // this.id = id;
-    this.id = "5d5f8e45e7bce75ae7fb8278";
+    this.id = id;
+    // this.id = "5d5f8e45e7bce75ae7fb8278";
     this.getList();
   },
   // 页面触底
