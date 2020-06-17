@@ -4,15 +4,17 @@
     <view class="pic_detail">
       <view class="pic_title">
         <view class="pic_avatar">
-          <image :src="imgCurrent.user.avatar" mode="widthFix" />
+          <image :src="imgCurrent.user.avatar || userdefault.avatar" mode="widthFix" />
         </view>
         <view class="pic_user">
-          <view class="pic_username">{{imgCurrent.user.name}}</view>
+          <view class="pic_username">{{imgCurrent.user.name ||userdefault.name}}</view>
           <view class="pic_time">{{dateDis}}</view>
         </view>
       </view>
       <view class="pic">
-        <image :src="imgsrc" mode="widthFix" />
+        <touch-move @touchResult="handleTouch">
+          <image :src="imgCurrent.thumb" mode="widthFix" />
+        </touch-move>
       </view>
       <view class="pic_info">
         <view class="pic_rank">
@@ -21,12 +23,11 @@
         </view>
         <view class="pic_fav">
           <text class="iconfont icon-shoucang1">收藏</text>
-          <!-- <text class="pic_favtext">收藏</text> -->
         </view>
       </view>
     </view>
     <!-- 相关、专辑说明 -->
-    <view class="pic_album_list">
+    <view class="pic_album_list" v-if="album.length !== 0">
       <view class="pic_album_title">相关</view>
       <view class="pic_album_item" v-for="item in album" :key="item.id">
         <image class="pic_album_cover" :src="item.cover" mode="aspectFill" />
@@ -41,39 +42,48 @@
     </view>
     <!-- 最热评论 -->
     <comment comment_title="最热评论" :comments="hot"></comment>
-    <!-- 隔离带 -->
-    <view class="comments_blank"></view>
     <!-- 最新评论 -->
     <comment comment_title="最新评论" :comments="comments"></comment>
+    <view class="nocomment" v-if="hot.length === 0 && comments.length === 0">暂无评论……</view>
+    <view class="download">
+      <view class="downloadbutton" @click="handleDownload">下载图片</view>
+    </view>
   </view>
 </template>
 <script>
 import moment from "moment";
 import comment from "@/components/comments";
+import touchMove from "@/components/touchmove";
 moment.locale("zh-cn");
 export default {
   data() {
     return {
-      // imgList: [],
-      // imgIndex: 0,
+      imgList: [],
+      imgIndex: 0,
       imgCurrent: {},
       imgsrc: "",
       dateDis: "",
       album: "",
       hot: "",
-      comments: ""
+      comments: "",
+      userdefault: {
+        avatar:
+          "http://wx.qlogo.cn/mmopen/PiajxSqBRaEJicbNovoeyfibbMDcrI7oXVcdDqf0nz3KnrL67LYLBHER8vQLs8A4nZkRSv494X0ekz5xMic8TwgphA/0",
+        name: "神秘用户"
+      }
     };
   },
   onLoad() {
-    // this.imgList = getApp().globalData.imgList;
-    // this.imgIndex = getApp().globalData.imgIndex;
     const { imgList, imgIndex } = getApp().globalData;
-    this.imgCurrent = imgList[imgIndex];
-    console.log(this.imgCurrent);
+    this.imgIndex = imgIndex;
+    this.imgList = imgList;
+    this.imgCurrent = imgList[this.imgIndex];
+
     // 修改图片格式
     // this.imgsrc =
     //   this.imgCurrent.thumb + this.imgCurrent.rule.replace("$<Height>", 360);
-    this.imgsrc = this.imgCurrent.thumb;
+    // this.imgsrc = this.imgCurrent.thumb;
+
     // 修改日期
     this.dateDis = moment(this.imgCurrent.atime * 1000).fromNow();
 
@@ -100,9 +110,53 @@ export default {
             console.log(err);
           }
         });
+    },
+    handleTouch(data) {
+      let currentIndex = this.imgIndex + data;
+      if (currentIndex <= this.imgList.length - 1 && currentIndex >= 0) {
+        this.imgIndex += data;
+        this.imgCurrent = this.imgList[this.imgIndex];
+        this.dateDis = moment(this.imgCurrent.atime * 1000).fromNow();
+        let { id } = this.imgCurrent;
+        this.getComments(id);
+      } else {
+        uni.showToast({
+          title: "已经没有了...",
+          icon: "none"
+        });
+      }
+    },
+    async handleDownload() {
+      uni.showLoading({
+        title: "下载中"
+      });
+      const [err, data] = await uni
+        .downloadFile({
+          url: this.imgCurrent.thumb
+        })
+        .catch(err => {
+          console.err(err);
+        });
+      console.log(data);
+      const result = await uni.saveImageToPhotosAlbum({
+        filePath: data.tempFilePath
+      });
+      uni.hideLoading();
+      if (result[0] === null) {
+        uni.showToast({
+          title: "下载成功"
+        });
+      } else {
+        uni.showToast({
+          title: "下载失败",
+          icon: "none"
+        });
+      }
+
+      console.log(result);
     }
   },
-  components: { comment }
+  components: { comment, touchMove }
 };
 </script>
 <style lang='scss' scoped>
@@ -195,9 +249,26 @@ export default {
     }
   }
 }
-.comments_blank {
-  width: 750rpx;
-  height: 20rpx;
-  background-color: #ddd;
+
+.nocomment {
+  padding: 20rpx;
+}
+
+.download {
+  height: 120rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .downloadbutton {
+    width: 90%;
+    background-color: $color;
+    height: 85%;
+    color: #fff;
+    font-size: 50rpx;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 </style>

@@ -12,9 +12,9 @@
       </view>
       <view class="recommend_content">
         <view class="recommend_item" v-for="item in recommendList" :key="item.id">
-          <navigator :url="`/pages/album/index?id=${item.target}`">
-            <image :src="item.thumb" mode="widthFix" />
-          </navigator>
+          <!-- <navigator :url="`/pages/album/index?id=${item.target}`"> -->
+          <image :src="item.thumb" mode="widthFix" />
+          <!-- </navigator> -->
         </view>
       </view>
     </view>
@@ -33,7 +33,7 @@
       </view>
       <view class="months_content">
         <view class="months_item" v-for="(item,index) in monthsList.items" :key="item.id">
-          <go-detail :list="monthsList" :index="index">
+          <go-detail :list="monthsList.items" :index="index">
             <image :src="item.thumb + item.rule.replace('$<Height>', 360)" mode="aspectFill" />
           </go-detail>
         </view>

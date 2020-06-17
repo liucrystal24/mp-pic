@@ -19,7 +19,7 @@
     <view class="wallpaper_wrap">
       <view class="wrap_item" v-for="(item,index) in wallpaper" :key="item.id">
         <go-detail :list="wallpaper" :index="index">
-          <image :src="item.thumb+item.rule.replace('$<Height>','360')" class="wallpaper_img" />
+          <image :src="item.thumb+item.rule.replace('$<Height>','360')" mode="aspectFill" />
         </go-detail>
       </view>
     </view>
@@ -46,7 +46,6 @@ export default {
   onLoad(option) {
     const { id } = option;
     this.id = id;
-    // this.id = "5d5f8e45e7bce75ae7fb8278";
     this.getList();
   },
   // 页面触底

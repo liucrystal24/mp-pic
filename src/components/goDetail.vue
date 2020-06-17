@@ -10,7 +10,7 @@ export default {
   },
   props: {
     list: Array,
-    index: String
+    index: Number
   },
   mounted() {},
   methods: {

@@ -24,6 +24,7 @@
         </view>
       </view>
     </view>
+    <view class="comments_blank"></view>
   </view>
 </template>
 <script>
@@ -121,6 +122,12 @@ export default {
       .content_fav {
       }
     }
+  }
+
+  .comments_blank {
+    width: 750rpx;
+    height: 20rpx;
+    background-color: #ddd;
   }
 }
 </style>
