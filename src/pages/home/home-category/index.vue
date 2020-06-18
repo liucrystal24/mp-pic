@@ -1,27 +1,5 @@
 <template>
   <scroll-view scroll-y class="category_list">
-    <!-- <view class="titleinner">
-    <uni-segmented-control
-      :current="current"
-      :values="items.map((v) => v.title)"
-      @clickItem="onClickItem"
-      style-type="text"
-      active-color="#d4237e"
-    ></uni-segmented-control>
-  </view>
-  <view class="title_content">
-    <view v-if="current === 0">
-      <home-recommend></home-recommend>
-    </view>
-    <view v-if="current === 1">
-      <home-category></home-category>
-    </view>
-    <view v-if="current === 2">
-      <home-new></home-new>
-    </view>
-    <view v-if="current === 3">
-      <home-album></home-album>
-    </view>-->
     <view class="category_wrap">
       <navigator
         class="category_item"
@@ -92,9 +70,6 @@ export default {
           rgba(0, 0, 0, 0)
         );
         font-size: 30rpx;
-        // background-color: #000;
-        // padding-left: 25rpx;
-        // opacity: 0.5;
       }
     }
   }
