@@ -15,36 +15,31 @@
       </view>
     </view>
     <view class="title_content">
-      <view v-if="current === 0">
-        <home-recommend></home-recommend>
+      <view v-if="current < 4">
+        <video-wrap :request="{requesturl:items[current].request,keyword:items[current].keyword}"></video-wrap>
       </view>
-      <view v-if="current === 1">
-        <home-category></home-category>
-      </view>
-      <view v-if="current === 2">
-        <home-new></home-new>
-      </view>
-      <view v-if="current === 3">
-        <home-album></home-album>
+      <view v-if="current === 4">
+        <video-wrap :keyword="items[4].keyword" :request="items[4].request"></video-wrap>
       </view>
     </view>
   </view>
 </template>
-
 <script>
-import homeRecommend from "./home-recommend";
-import homeCategory from "./home-category";
-import homeNew from "./home-new";
-import homeAlbum from "./home-album";
+import videoWrap from "@/components/videoWrap";
 import { uniSegmentedControl } from "@dcloudio/uni-ui";
 export default {
   data() {
     return {
       items: [
-        { title: "推荐" },
-        { title: "分类" },
-        { title: "最新" },
-        { title: "专辑" }
+        { title: "推荐", request: "/featured", keyword: "hot" },
+        {
+          title: "娱乐",
+          request: "/category/59b25abbe7bce76bc834198a",
+          keyword: "new"
+        },
+        { title: "最新", request: "/videowp", keyword: "new" },
+        { title: "热门", request: "/videowp", keyword: "hot" },
+        { title: "分类", request: "/videowp", keyword: "new" }
       ],
       current: 0
     };
@@ -56,18 +51,10 @@ export default {
       }
     }
   },
-  onLoad() {},
-  components: {
-    homeRecommend,
-    homeCategory,
-    homeNew,
-    homeAlbum,
-    uniSegmentedControl
-  }
+  components: { uniSegmentedControl, videoWrap }
 };
 </script>
-
-<style lang="scss">
+<style lang='scss'>
 .tab_title {
   position: relative;
   .titleinner {
