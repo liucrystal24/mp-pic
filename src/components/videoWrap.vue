@@ -1,7 +1,12 @@
 <template>
   <view>
     <scroll-view scroll-y enable-flex class="video_wrap" @scrolltolower="handleToLower">
-      <view class="video_wrap_item" v-for="item in videoList" :key="item.id">
+      <view
+        class="video_wrap_item"
+        v-for="item in videoList"
+        :key="item.id"
+        @click="handleGoVideo(item)"
+      >
         <image :src="item.img" mode="widthFix" />
       </view>
     </scroll-view>
@@ -60,6 +65,13 @@ export default {
           icon: "none"
         });
       }
+    },
+    handleGoVideo(item) {
+      console.log(item);
+      getApp().globalData.videoList = item;
+      uni.navigateTo({
+        url: "/pages/videoPlay/index"
+      });
     }
   },
   props: {

@@ -5,6 +5,11 @@
 				"navigationBarTitleText": "视频"
 			}
 		}, {
+			"path": "pages/videoPlay/index",
+			"style": {
+				"navigationBarTitleText": "视频播放"
+			}
+		}, {
 			"path": "pages/home/index",
 			"style": {
 				"navigationBarTitleText": "首页"
