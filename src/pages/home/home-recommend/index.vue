@@ -102,9 +102,9 @@ export default {
       });
       uni
         .request({
-          url: "http://157.122.54.189:9088/image/v3/homepage/vertical",
+          // url: "http://157.122.54.189:9088/image/v3/homepage/vertical",
           // 备用链接
-          // url: "http://service.picasso.adesk.com/v3/homepage/vertical",
+          url: "http://service.picasso.adesk.com/v3/homepage/vertical",
           data: this.params
         })
         .then(data => {
