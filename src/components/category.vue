@@ -29,7 +29,7 @@ export default {
     getList(id) {
       uni
         .request({
-          url: `http://157.122.54.189:9088/image/v1/vertical/category/${id}/vertical`,
+          url: `http://service.picasso.adesk.com/v1/vertical/category/${id}/vertical`,
           data: this.params
         })
         .then(data => {
