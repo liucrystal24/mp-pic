@@ -33,13 +33,6 @@
       </view>
       <view class="tool_item">
         <view class="tool_pic">
-          <image src="../../static/mine/user_video.png" mode="widthFix" />
-        </view>
-        <view class="tool_title">我的视频</view>
-        <view class="iconfont icon-right tool_arrow"></view>
-      </view>
-      <view class="tool_item">
-        <view class="tool_pic">
           <image src="../../static/mine/user_shopping.png" mode="widthFix" />
         </view>
         <view class="tool_title">金币商城</view>

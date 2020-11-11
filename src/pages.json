@@ -10,21 +10,6 @@
 				"navigationBarTitleText": "我的"
 			}
 		}, {
-			"path": "pages/video/index",
-			"style": {
-				"navigationBarTitleText": "视频"
-			}
-		}, {
-			"path": "pages/videoPlay/index",
-			"style": {
-				"navigationBarTitleText": "视频播放"
-			}
-		}, {
-			"path": "pages/imgDetail/index",
-			"style": {
-				"navigationBarTitleText": "图片详情"
-			}
-		}, {
 			"path": "pages/imgCategory/index",
 			"style": {
 				"navigationBarTitleText": "图片分类"
@@ -44,7 +29,7 @@
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
-		"navigationBarTitleText": "找图",
+		"navigationBarTitleText": "Chris Wallpaper",
 		"navigationBarBackgroundColor": "#000"
 	},
 	"tabBar": {
@@ -59,18 +44,6 @@
 				"iconPath": "./static/tabbar/home.png",
 				"selectedIconPath": "./static/tabbar/home_selected.png"
 			},
-			// {
-			// 	"pagePath": "pages/video/index",
-			// 	"text": "视频",
-			// 	"iconPath": "./static/tabbar/video.png",
-			// 	"selectedIconPath": "./static/tabbar/video_selected.png"
-			// },
-			// {
-			// 	"pagePath": "pages/search/index",
-			// 	"text": "搜索",
-			// 	"iconPath": "./static/tabbar/search.png",
-			// 	"selectedIconPath": "./static/tabbar/search_selected.png"
-			// },
 			{
 				"pagePath": "pages/mine/index",
 				"text": "我的",

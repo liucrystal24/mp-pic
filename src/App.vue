@@ -9,12 +9,12 @@ export default {
   onHide: function() {
     console.log("App Hide");
   },
-  globalData: {
-  }
+  globalData: {}
 };
 </script>
 
 <style>
 @import "./style/base.wxss";
 @import "./style/iconfont.wxss";
+@import './style/mine.wxss';
 </style>
