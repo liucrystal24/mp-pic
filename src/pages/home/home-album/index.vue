@@ -56,7 +56,7 @@ export default {
       });
       uni
         .request({
-          url: "http://service.picasso.adesk.com/v1/wallpaper/album",
+          url: "https://service.picasso.adesk.com/v1/wallpaper/album",
           data: this.params
         })
         .then(data => {

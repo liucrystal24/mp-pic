@@ -37,9 +37,9 @@ export default {
           request: "/category/59b25abbe7bce76bc834198a",
           keyword: "new"
         },
-        { title: "最新", request: "/videowp", keyword: "new" },
-        { title: "热门", request: "/videowp", keyword: "hot" },
-        { title: "分类", request: "/videowp", keyword: "new" }
+        { title: "最新", request: "/videowp", keyword: "new" }
+        // { title: "热门", request: "/videowp", keyword: "hot" },
+        // { title: "分类", request: "/videowp", keyword: "new" }
       ],
       current: 0
     };

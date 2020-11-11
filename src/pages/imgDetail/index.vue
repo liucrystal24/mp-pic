@@ -68,7 +68,7 @@ export default {
       comments: "",
       userdefault: {
         avatar:
-          "http://wx.qlogo.cn/mmopen/PiajxSqBRaEJicbNovoeyfibbMDcrI7oXVcdDqf0nz3KnrL67LYLBHER8vQLs8A4nZkRSv494X0ekz5xMic8TwgphA/0",
+          "https://wx.qlogo.cn/mmopen/PiajxSqBRaEJicbNovoeyfibbMDcrI7oXVcdDqf0nz3KnrL67LYLBHER8vQLs8A4nZkRSv494X0ekz5xMic8TwgphA/0",
         name: "神秘用户"
       }
     };
@@ -130,17 +130,24 @@ export default {
       uni.showLoading({
         title: "下载中"
       });
+      // console.log(this.imgCurrent.thumb);
+      // this.imgCurrent.thumb 接口协议为 http，不满足微信发布，所以添加此图片
+      let picurl =
+        "https://b.zol-img.com.cn/sjbizhi/images/12/320x510/1604539833812.jpg";
+      // 转换地址为 微信可下载的地址
       const [err, data] = await uni
         .downloadFile({
-          url: this.imgCurrent.thumb
+          url: picurl
         })
         .catch(err => {
           console.err(err);
         });
-      console.log(data);
+      console.log(data.tempFilePath);
+      // 下载
       const result = await uni.saveImageToPhotosAlbum({
         filePath: data.tempFilePath
       });
+      console.log(result);
       uni.hideLoading();
       if (result[0] === null) {
         uni.showToast({

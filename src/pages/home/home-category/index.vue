@@ -1,3 +1,10 @@
+<!--
+ * @Author: ChrisLiu
+ * @Date: 2020-06-02 22:57:25
+ * @LastEditors: ChrisLiu
+ * @LastEditTime: 2020-11-11 16:18:52
+ * @Description: file content
+-->
 <template>
   <scroll-view scroll-y class="category_list">
     <view class="category_wrap">
@@ -30,7 +37,7 @@ export default {
     getList() {
       uni
         .request({
-          url: "http://service.picasso.adesk.com/v1/vertical/category"
+          url: "https://service.picasso.adesk.com/v1/vertical/category"
         })
         .then(data => {
           let [err, res] = data;

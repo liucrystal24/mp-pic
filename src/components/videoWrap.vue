@@ -35,7 +35,7 @@ export default {
       });
       uni
         .request({
-          url: `http://157.122.54.189:9088/videoimg/v1/videowp${this.request.requesturl}`,
+          url: `https://157.122.54.189:9088/videoimg/v1/videowp${this.request.requesturl}`,
           data: this.params
         })
         .then(data => {

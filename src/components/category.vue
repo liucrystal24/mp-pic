@@ -29,13 +29,14 @@ export default {
     getList(id) {
       uni
         .request({
-          url: `http://service.picasso.adesk.com/v1/vertical/category/${id}/vertical`,
+          url: `https://service.picasso.adesk.com/v1/vertical/category/${id}/vertical`,
           data: this.params
         })
         .then(data => {
           let [err, res] = data;
           if (err === null) {
-            console.log(res.data.res.vertical);
+            // console.log(res.data.res.vertical);
+            console.log("测试res：" + res.data.res);
             if (res.data.res.vertical.length === 0) {
               this.hasMore = false;
               // 第一遍拉到底部是提示没有图片

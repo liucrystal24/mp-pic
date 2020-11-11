@@ -1,5 +1,15 @@
 {
 	"pages": [{
+			"path": "pages/home/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		}, {
+			"path": "pages/mine/index",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		}, {
 			"path": "pages/video/index",
 			"style": {
 				"navigationBarTitleText": "视频"
@@ -8,11 +18,6 @@
 			"path": "pages/videoPlay/index",
 			"style": {
 				"navigationBarTitleText": "视频播放"
-			}
-		}, {
-			"path": "pages/home/index",
-			"style": {
-				"navigationBarTitleText": "首页"
 			}
 		}, {
 			"path": "pages/imgDetail/index",
@@ -35,12 +40,6 @@
 			"style": {
 				"navigationBarTitleText": "搜索"
 			}
-		},
-		{
-			"path": "pages/mine/index",
-			"style": {
-				"navigationBarTitleText": "我的"
-			}
 		}
 	],
 	"globalStyle": {
@@ -60,18 +59,18 @@
 				"iconPath": "./static/tabbar/home.png",
 				"selectedIconPath": "./static/tabbar/home_selected.png"
 			},
-			{
-				"pagePath": "pages/video/index",
-				"text": "视频",
-				"iconPath": "./static/tabbar/video.png",
-				"selectedIconPath": "./static/tabbar/video_selected.png"
-			},
-			{
-				"pagePath": "pages/search/index",
-				"text": "搜索",
-				"iconPath": "./static/tabbar/search.png",
-				"selectedIconPath": "./static/tabbar/search_selected.png"
-			},
+			// {
+			// 	"pagePath": "pages/video/index",
+			// 	"text": "视频",
+			// 	"iconPath": "./static/tabbar/video.png",
+			// 	"selectedIconPath": "./static/tabbar/video_selected.png"
+			// },
+			// {
+			// 	"pagePath": "pages/search/index",
+			// 	"text": "搜索",
+			// 	"iconPath": "./static/tabbar/search.png",
+			// 	"selectedIconPath": "./static/tabbar/search_selected.png"
+			// },
 			{
 				"pagePath": "pages/mine/index",
 				"text": "我的",
