@@ -18,7 +18,7 @@
       </view>
       <view class="pic_info">
         <view class="pic_rank">
-          <text class="iconfont icon-dianzan">{{imgCurrent.rank}}</text>
+          <text class="iconfont icon-pickme">{{imgCurrent.rank}}</text>
           <!-- <text class="pic_ranktext">{{imgCurrent.rank}}</text> -->
         </view>
         <view class="pic_fav">

@@ -20,7 +20,7 @@
       <view class="comment_content">
         <view class="content_info">{{item.content}}</view>
         <view class="content_fav">
-          <text class="iconfont icon-dianzan">{{item.size}}</text>
+          <text class="iconfont icon-pickme">{{item.size}}</text>
         </view>
       </view>
     </view>

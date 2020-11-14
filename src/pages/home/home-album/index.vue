@@ -21,7 +21,7 @@
           <view class="item_name">{{item.name}}</view>
           <view class="item_desc text_one">{{item.desc}}</view>
           <view class="item_isfav">
-            <view class="isfav_btn">+ 关注</view>
+            <!-- <view class="isfav_btn">+ 关注</view> -->
           </view>
         </view>
       </navigator>

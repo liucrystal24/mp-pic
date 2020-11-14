@@ -4,7 +4,7 @@
       <image :src="album.cover" mode="widthFix" />
       <view class="cover_bottom">
         <view class="cover_text">{{album.name}}</view>
-        <view class="cover_fav">关注专辑</view>
+        <!-- <view class="cover_fav">关注专辑</view> -->
       </view>
     </view>
     <view class="album_desc">

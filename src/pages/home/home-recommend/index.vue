@@ -29,7 +29,7 @@
           </view>
           <view class="months_slogan">{{ monthsList.title }}</view>
         </view>
-        <view class="months_title_more">更多 ></view>
+        <view class="months_title_more"></view>
       </view>
       <view class="months_content">
         <view class="months_item" v-for="(item,index) in monthsList.items" :key="item.id">

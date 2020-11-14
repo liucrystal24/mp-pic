@@ -1,3 +1,10 @@
+<!--
+ * @Author: ChrisLiu
+ * @Date: 2020-06-13 21:12:12
+ * @LastEditors: ChrisLiu
+ * @LastEditTime: 2020-11-12 20:01:41
+ * @Description: file content
+-->
 <template>
   <view @click="handleCLick">
     <slot></slot>

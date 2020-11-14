@@ -2,55 +2,57 @@
   <view class="content">
     <view class="user_info">
       <view class="user_title">
-        <view class="iconfont icon-github user_avatar"></view>
+        <view class="user_avatar">
+          <image src="../../static/mine/chris_avator.jpg" mode="widthFix" />
+        </view>
         <view class="user_name">
-          <view class="user_github">liucrystal24</view>
-          <view class="user_wx">微信：Chrisliu24</view>
+          <view class="user_github">刘广宇</view>
+          <!-- <view class="user_wx">微信：Chrisliu24</view> -->
         </view>
       </view>
       <view class="user_friends">
         <view class="friends_items">
-          <view class="friends_num">2</view>
-          <view class="friends_title">主题</view>
+          <view class="friends_num">年龄</view>
+          <view class="friends_title">26</view>
         </view>
         <view class="friends_items">
-          <view class="friends_num">30</view>
-          <view class="friends_title">关注</view>
+          <view class="friends_num">职位</view>
+          <view class="friends_title">前端开发</view>
         </view>
         <view class="friends_items">
-          <view class="friends_num">666</view>
-          <view class="friends_title">粉丝</view>
+          <view class="friends_num">地点</view>
+          <view class="friends_title">南京</view>
         </view>
       </view>
     </view>
     <view class="user_tool">
       <view class="tool_item">
         <view class="tool_pic">
-          <image src="../../static/mine/user_pic.png" mode="widthFix" />
+          <image src="../../static/mine/phone.png" mode="widthFix" />
         </view>
-        <view class="tool_title">我的壁纸</view>
-        <view class="iconfont icon-right tool_arrow"></view>
+        <view class="tool_title">17626047836</view>
+        <!-- <view class="iconfont icon-right tool_arrow"></view> -->
       </view>
       <view class="tool_item">
         <view class="tool_pic">
-          <image src="../../static/mine/user_shopping.png" mode="widthFix" />
+          <image src="../../static/mine/wechat.png" mode="widthFix" />
         </view>
-        <view class="tool_title">金币商城</view>
-        <view class="iconfont icon-right tool_arrow"></view>
+        <view class="tool_title">Chrisliu24</view>
+        <!-- <view class="iconfont icon-right tool_arrow"></view> -->
       </view>
       <view class="tool_item">
         <view class="tool_pic">
-          <image src="../../static/mine/user_advise.png" mode="widthFix" />
+          <image src="../../static/mine/github.jpg" mode="widthFix" />
         </view>
-        <view class="tool_title">意见反馈</view>
-        <view class="iconfont icon-right tool_arrow"></view>
+        <view class="tool_title">liucrystal24</view>
+        <!-- <view class="iconfont icon-right tool_arrow"></view> -->
       </view>
       <view class="tool_item">
         <view class="tool_pic">
-          <image src="../../static/mine/user_setting.png" mode="widthFix" />
+          <image src="../../static/mine/email.png" mode="widthFix" />
         </view>
-        <view class="tool_title">设置</view>
-        <view class="iconfont icon-right tool_arrow"></view>
+        <view class="tool_title">liucrystal_24@outlook.com</view>
+        <!-- <view class="iconfont icon-right tool_arrow"></view> -->
       </view>
     </view>
   </view>
@@ -87,6 +89,8 @@ export default {
         font-size: 140rpx;
         width: 150rpx;
         height: 150rpx;
+        border-radius: 75rpx;
+        overflow: hidden;
       }
       .user_name {
         margin-left: 55rpx;
@@ -108,6 +112,7 @@ export default {
         width: calc(100vw / 3);
         .friends_num {
           font-size: 30rpx;
+          font-weight: 600;
         }
         .friends_title {
           font-size: 30rpx;

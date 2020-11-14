@@ -2,7 +2,7 @@
  * @Author: ChrisLiu
  * @Date: 2020-06-02 22:57:25
  * @LastEditors: ChrisLiu
- * @LastEditTime: 2020-11-11 16:18:52
+ * @LastEditTime: 2020-11-14 22:36:12
  * @Description: file content
 -->
 <template>
@@ -42,7 +42,26 @@ export default {
         .then(data => {
           let [err, res] = data;
           console.log(res.data.res.category);
-          this.category = res.data.res.category;
+          let nowYear = new Date().getFullYear();
+          let nowMonth = new Date().getMonth() + 1;
+          let nowDate = new Date().getDate();
+          // console.log(nowYear, nowMonth, nowDate);
+          if (
+            (nowYear === 2020) &
+            (nowMonth === 11) &
+            (nowDate === 14 || nowDate === 15 || nowDate === 16)
+          ) {
+            let categoryFilter = res.data.res.category.filter(item => {
+              return (
+                item.name !== "美女" &&
+                item.name !== "男人" &&
+                item.name !== "明星"
+              );
+            });
+            this.category = categoryFilter;
+          } else {
+            this.category = res.data.res.category;
+          }
         });
     }
   }

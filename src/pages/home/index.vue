@@ -11,7 +11,7 @@
         ></uni-segmented-control>
       </view>
       <view class="titlesearch">
-        <text class="iconfont icon-sousuo"></text>
+        <!-- <text class="iconfont icon-sousuo"></text> -->
       </view>
     </view>
     <view class="title_content">
