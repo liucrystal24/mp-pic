@@ -9,25 +9,32 @@
 本项目通过瀑布流的模式展示分类壁纸，目前主要实现的模块包括 **推荐、热门、分类、专辑** 等，主要功能包括 **图片评论列表、手势滑动切换图片、下载图片** 等，并且 **封装了手势滑动组件**
 
 - 推荐
-  ![recommend](./src/static/readme/recommend.jpg)
+
+![recommend](./src/static/readme/recommend.jpg)
 
 - 分类
-  ![category](./src/static/readme/category.jpg)
+
+![category](./src/static/readme/category.jpg)
 
 - 专辑
-  ![album](./src/static/readme/album.jpg)
+
+![album](./src/static/readme/album.jpg)
 
 - 瀑布流图片展示
-  ![scroll](./src/static/readme/scroll.gif)
+
+![scroll](./src/static/readme/scroll.gif)
 
 - 图片评论
-  ![detail](./src/static/readme/detail.gif)
+
+![detail](./src/static/readme/detail.gif)
 
 - 手势滑动组件
-  ![left_right](./src/static/readme/left_right.gif)
+
+![left_right](./src/static/readme/left_right.gif)
 
 - 下载图片
-  ![download](./src/static/readme/download.gif)
+
+![download](./src/static/readme/download.gif)
 
 ## 项目演示
 
