@@ -160,4 +160,7 @@ npm run dev:mp-weixin
 
 ## 总结
 
-1. [小程序初始化和基本知识]()
+1. [【ChrisWallpaper（一）】 项目初始化](https://github.com/liucrystal24/Notebook/issues/20)
+2. [【ChrisWallpaper（二）】 全局配置](https://github.com/liucrystal24/Notebook/issues/21)
+3. [【ChrisWallpaper（三）】 首页 - 瀑布流滚动加载](https://github.com/liucrystal24/Notebook/issues/22)
+4. [【ChrisWallpaper（四）】 图片处理 - 跳转、左右滑动、下载](https://github.com/liucrystal24/Notebook/issues/23)
